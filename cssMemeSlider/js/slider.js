@@ -44,8 +44,8 @@ export default class Slider {
     if(animation) {
       this.currentSlideIndex = index;
       this.carousel.animate(animation, this.sliderDuration);
-      this.sliderButtonCollection.forEach(i => i.classList.remove('slider-button__active'));
-      this.sliderButtonCollection[index].classList.add('slider-button__active');
+      this.sliderButtonCollection.forEach(i => i.children[0].classList.remove('slider-button__active'));
+      this.sliderButtonCollection[index].children[0].classList.add('slider-button__active');
     }
     this._initDescription();
   }
@@ -71,9 +71,11 @@ export default class Slider {
   _initButtons() {
     const buttons = this.data.map((i, index) => {
       const el = document.createElement('li');
-      el.classList.add('slider-button');
+      el.classList.add('slider-button-item')
+      const button = document.createElement('div');
+      button.classList.add('slider-button');
       if (i.isActive) {
-        el.classList.add('slider-button__active');
+        button.classList.add('slider-button__active');
       }
       const span = document.createElement('span');
       span.classList.add('visually-hidden');
@@ -81,7 +83,8 @@ export default class Slider {
       el.addEventListener('click', () => {
         this._sliderAnimationClick(index);
       })
-      el.appendChild(span);
+      button.appendChild(span);
+      el.appendChild(button);
       return el;
     });
     this.sliderButtonCollection = buttons;

@@ -1,0 +1,111 @@
+:root {
+    --main-bg-color: #FFFFFF;
+    --main-color: #FFFFFF;
+    --alt-bg-color: #0c0c0ed2;
+    --alt-color: #FFFFFF;
+    --secondary-color: #BB945F;
+    --main-fs: 20px;
+    --main-fw: 400;
+    --main-button: #1b40b9;
+    --main-button-hover: #FFFFFF;
+}
+
+body {
+    background-color: var(--alt-bg-color);
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+.slider-wrapper {
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 1220px;
+}
+
+.about-slider {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    position: relative;
+    left: 2440px;
+    justify-content: center;
+}
+
+.slider-bottom {
+    display: flex;
+    justify-content: space-between;
+}
+
+.slider-button-list {
+    display: flex;
+}
+
+.slider-button {
+    background-color: var(--main-button);
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slider-button__active:before {
+    content:'';
+    display: block;
+    border-radius: 50%;
+    background-color: var(--alt-bg-color);
+    width: 80%;
+    height: 80%;
+    align-self: center;
+}
+
+.slide-description {
+    color: var(--main-color);
+}
+
+.slider-button:hover {
+    background-color: var(--main-button-hover);
+}
+
+.about-slider-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1200px;
+    height: 400px;
+    box-sizing: border-box;
+}
+.about-slider-item img {
+    width: 1200px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.about-slider-item__active {
+    display: flex;
+}
+
+@media screen and (width <= 1440px) {
+
+}

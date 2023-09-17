@@ -1,17 +1,12 @@
 :root {
-    --main-bg-color: #FFFFFF;
     --main-color: #FFFFFF;
-    --alt-bg-color: #0c0c0ed2;
-    --alt-color: #FFFFFF;
-    --secondary-color: #BB945F;
-    --main-fs: 20px;
-    --main-fw: 400;
+    --secondary-color: #0c0c0ed2;
     --main-button: #1b40b9;
     --main-button-hover: #FFFFFF;
 }
 
 body {
-    background-color: var(--alt-bg-color);
+    background-color: var(--secondary-color);
 }
 
 .visually-hidden {
@@ -37,7 +32,7 @@ body {
     max-width: 1220px;
 }
 
-.about-slider {
+.slider {
     display: flex;
     flex-wrap: wrap;
     gap: 25px;
@@ -73,7 +68,7 @@ body {
     content:'';
     display: block;
     border-radius: 50%;
-    background-color: var(--alt-bg-color);
+    background-color: var(--secondary-color);
     width: 80%;
     height: 80%;
     align-self: center;
@@ -87,22 +82,24 @@ body {
     background-color: var(--main-button-hover);
 }
 
-.about-slider-item {
+.slider-item {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 1200px;
     height: 400px;
     box-sizing: border-box;
+    background-color: #9b815d36;
+    border-radius: 10px;
 }
-.about-slider-item img {
+.slider-item img {
     width: 1200px;
     height: 400px;
-    object-fit: cover;
+    object-fit:scale-down;
     border-radius: 10px;
 }
 
-.about-slider-item__active {
+.slider-item__active {
     display: flex;
 }
 

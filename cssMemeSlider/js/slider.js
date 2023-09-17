@@ -7,7 +7,7 @@ export default class Slider {
     this.description = document.querySelector('.slide-description');
     this.sliderButtonList = document.querySelector('.slider-button-list');
     this.sliderButtonCollection = [];
-    this.itemWidth = 0;
+    this.itemWidth = (window.innerWidth / 100 * 80) + 20;
     this.currentSlideIndex = 0;
     this.sliderDuration = {
         duration: 200,
@@ -15,10 +15,6 @@ export default class Slider {
         fill: 'forwards',
     };
   };
-
-  _logData() {
-    console.log(this.data);
-  }
 
   _sliderAnimation = (index) => {
     if(index === this.currentSlideIndex) return false;
@@ -70,7 +66,6 @@ export default class Slider {
       return el;
     });
     this.carousel.replaceChildren(...slides);
-    this.itemWidth = slides[0].clientWidth + 22;
   }
 
   _initButtons() {
@@ -101,6 +96,8 @@ export default class Slider {
 
   init(){
       this._renderSlider();
-      this._logData();
+      window.addEventListener('resize', () => {
+        this.itemWidth = (window.innerWidth / 100 * 80) + 20;
+      });
   }
 }
